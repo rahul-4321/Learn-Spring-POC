@@ -1,8 +1,9 @@
 package com.rahul;
 
-public class Laptop {
+public class Laptop implements Computer{
     
-    void compile(){
-        System.out.println("Laptop class Called");
+    @Override
+    public void compile(){
+        System.out.println("Compiling through laptop");
     }
 }
