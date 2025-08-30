@@ -15,8 +15,8 @@
 -->
 <bean id="alien" class="com.rahul.Alien" scope="singleton">
     <!-- <property name="val" value="20"> </property> -->
-    <constructor-arg ref="laptop"></constructor-arg>
-    <constructor-arg value="20"></constructor-arg>
+    <constructor-arg type="com.rahul.Laptop" ref="laptop"></constructor-arg>
+    <constructor-arg type="int" value="20"></constructor-arg>
     <!-- <property name="laptop" ref="laptop"></property> -->
     
 </bean>
