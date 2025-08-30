@@ -14,8 +14,11 @@
     prototype: each time getBean() is called 
 -->
 <bean id="alien" class="com.rahul.Alien" scope="singleton">
-<property name="val" value="20"> </property>
-<property name="laptop" ref="laptop"></property>
+    <!-- <property name="val" value="20"> </property> -->
+    <constructor-arg ref="laptop"></constructor-arg>
+    <constructor-arg value="20"></constructor-arg>
+    <!-- <property name="laptop" ref="laptop"></property> -->
+    
 </bean>
 
 <bean id="laptop" class="com.rahul.Laptop"></bean>
