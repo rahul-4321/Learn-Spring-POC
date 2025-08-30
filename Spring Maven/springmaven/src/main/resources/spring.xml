@@ -13,8 +13,8 @@
     singleton(default): object is created only one time
     prototype: each time getBean() is called 
 -->
-<bean id="alien" class="com.rahul.Alien" scope="prototype">
-
+<bean id="alien" class="com.rahul.Alien" scope="singleton">
+<property name="val" value="20"> </property>
 </bean>
 
 </beans> 
