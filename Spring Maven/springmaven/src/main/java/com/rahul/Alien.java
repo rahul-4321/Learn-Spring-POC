@@ -1,9 +1,17 @@
 package com.rahul;
 
 public class Alien {
-    int val;
+    private int val;
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        System.out.println("Setter called");
+        this.val = val;
+    }
+
     Alien(){
-        this.val=10;
         System.out.println("Alien class Constructor");
     }
 
