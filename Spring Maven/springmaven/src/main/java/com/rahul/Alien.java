@@ -25,6 +25,17 @@ public class Alien {
         System.out.println("Alien class Constructor");
     }
 
+    Alien(int a){
+        this.val=a;
+        System.out.println("Parameterized constructor called");
+    }
+
+    Alien(int val, Laptop laptop){
+        System.out.println("primitive+ object type constructor called");
+        this.laptop=laptop;
+        this.val=val;
+    }
+
     public void alien(){
         val--;
         System.out.println("Alien class :"+ val);
