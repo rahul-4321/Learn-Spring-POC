@@ -1,6 +1,8 @@
 package com.rahul;
 
 public class Alien {
+
+    private Laptop laptop;
     private int val;
     public int getVal() {
         return val;
@@ -11,6 +13,14 @@ public class Alien {
         this.val = val;
     }
 
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
     Alien(){
         System.out.println("Alien class Constructor");
     }
@@ -18,5 +28,8 @@ public class Alien {
     public void alien(){
         val--;
         System.out.println("Alien class :"+ val);
+        laptop.compile();
     }
+
+ 
 }

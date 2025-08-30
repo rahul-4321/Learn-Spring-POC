@@ -15,11 +15,9 @@ public class App
 
         // Alien obj= new Alien();
         Alien obj1=  context.getBean("alien",Alien.class);
+        Laptop laptop= context.getBean("laptop",Laptop.class);
         obj1.alien();
         //obj1.val=30;
-        obj1.alien();
         
-        Alien obj2= (Alien) context.getBean("alien");
-        obj2.alien();
     }
 }
