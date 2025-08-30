@@ -4,6 +4,8 @@ public class Alien {
 
     private Laptop laptop;
     private int val;
+    private int age;
+    
     public int getVal() {
         return val;
     }
@@ -21,6 +23,15 @@ public class Alien {
         this.laptop = laptop;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
     Alien(){
         System.out.println("Alien class Constructor");
     }
@@ -34,6 +45,13 @@ public class Alien {
         System.out.println("primitive+ object type constructor called");
         this.laptop=laptop;
         this.val=val;
+    }
+
+    Alien(int val, Laptop laptop, int age){
+        System.out.println("three assignments- 2ints, 1 obj");
+        this.laptop=laptop;
+        this.val=val;
+        this.age=age;
     }
 
     public void alien(){
