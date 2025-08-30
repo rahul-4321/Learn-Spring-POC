@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<!-- 
+    scope type determines the number of objects created when getBean() is called for a class, Also the object will be created when the container is loading 
+    , But incase of prototype scope object is created when the bean is called
+
+    singleton(default): object is created only one time
+    prototype: each time getBean() is called 
+-->
+<bean id="alien" class="com.rahul.Alien" scope="prototype">
+
+</bean>
+
+</beans> 
