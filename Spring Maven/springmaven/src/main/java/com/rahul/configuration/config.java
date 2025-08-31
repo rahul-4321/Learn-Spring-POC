@@ -7,8 +7,10 @@ import com.rahul.Computer;
 
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
@@ -24,12 +26,13 @@ public class config {
 
     @Bean
     @Primary
+    // @LazyInitialization
     public Laptop comp(){
         return new Laptop();
     }
 
     @Bean
-    public Alien alien(@Autowired Computer comp){//not mandatory to use autowired
+    public Alien alien(@Qualifier("desk") @Autowired Computer comp){//not mandatory to use autowired
         Alien alien= new Alien();
         alien.setAge(22);
         alien.setVal(30);
