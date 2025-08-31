@@ -1,6 +1,7 @@
 package com.rahul;
 
 import com.rahul.configuration.config;
+import com.rahul.configuration.configComponent;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,9 +15,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        
 
-        ApplicationContext context= new AnnotationConfigApplicationContext(config.class);
+        ApplicationContext context=new AnnotationConfigApplicationContext(configComponent.class);
+        
+        //configuration through config class
+        //ApplicationContext context= new AnnotationConfigApplicationContext(config.class);
 
         Alien alienObj=context.getBean("alien",Alien.class);
         // alienObj.setVal(25);

@@ -2,11 +2,18 @@ package com.rahul;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
 
     // private Laptop laptop;
-
+    // @Autowired
     private Computer comp;
+    @Value("25")
     private int val;
     private int age;
     
@@ -31,6 +38,8 @@ public class Alien {
         return comp;
     }
 
+    @Autowired
+    @Qualifier("laptop")
     public void setComp(Computer comp) {
         this.comp = comp;
     }

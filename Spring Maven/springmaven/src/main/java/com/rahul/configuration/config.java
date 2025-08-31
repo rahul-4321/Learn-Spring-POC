@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
-@Configuration
+// @Configuration
 public class config {
 
     //we can give multiple names to single bean
