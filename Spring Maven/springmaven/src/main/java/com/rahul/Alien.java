@@ -44,7 +44,7 @@ public class Alien {
     }
 
 
-    Alien(){
+    public Alien(){
         System.out.println("Alien class Constructor");
     }
 
