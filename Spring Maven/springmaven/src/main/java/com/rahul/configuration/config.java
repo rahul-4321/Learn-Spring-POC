@@ -7,6 +7,7 @@ import com.rahul.Computer;
 
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
@@ -21,10 +22,11 @@ public class config {
         return new Desktop();
     }
 
-    // @Bean
-    // public Laptop comp(){
-    //     return new Laptop();
-    // }
+    @Bean
+    @Primary
+    public Laptop comp(){
+        return new Laptop();
+    }
 
     @Bean
     public Alien alien(@Autowired Computer comp){//not mandatory to use autowired
