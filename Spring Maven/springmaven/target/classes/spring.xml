@@ -13,12 +13,35 @@
     singleton(default): object is created only one time
     prototype: each time getBean() is called 
 -->
-<bean id="alien" class="com.rahul.Alien" scope="singleton">
-    <!-- <property name="val" value="20"> </property> -->
-    <constructor-arg value="20"></constructor-arg>
-    <!-- <property name="laptop" ref="laptop"></property> -->
-    <constructor-arg ref="laptop"></constructor-arg>
+<!-- autowire: byName, byType -->
+<bean id="alien" class="com.rahul.Alien" scope="singleton" autowire="byType">
+    <property name="val" value="20"> </property> 
+    <property name="comp" ref="comp1"></property>
+
+    <!--
+    <constructor-arg type="com.rahul.Laptop" ref="laptop"></constructor-arg>
+    <constructor-arg type="int" value="20"></constructor-arg>
+     -->
+
+    <!-- when we have multiple variable and of common data types we can inject the values wrt to index
+    <constructor-arg index="1" ref="laptop"/>
+    <constructor-arg index="0" value="2"/>
+    <constructor-arg index="2" value="30"/>
+    -->
+   
+    <!-- we can also use name instead of index but we need to keep the sequence. However if we do not want that then
+    we can add @constructorProperties({"val","laptop","age"}) variable seq matching to that of the constructor annotation on the constructor
+    <constructor-arg name="val" value="2"/>
+    
+    <constructor-arg name="age" value="30"/>
+    <constructor-arg name="laptop" ref="laptop"/>
+-->
+    
 </bean>
 
-<bean id="laptop" class="com.rahul.Laptop"></bean>
+<!-- when we have two objects of the same type, it will create confusion for spring when autowiring byType
+so we mark one of the bean as primary and the other will be backup -->
+<bean id="comp" class="com.rahul.Laptop" primary="true"></bean>
+<!-- lazy-init tells to create the bean only when called explicitly in code. It will be created if the property explicitly mentions its id -->
+<bean id="comp1" class="com.rahul.Desktop" lazy-init="true"></bean>
 </beans> 

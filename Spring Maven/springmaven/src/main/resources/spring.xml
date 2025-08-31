@@ -16,7 +16,7 @@
 <!-- autowire: byName, byType -->
 <bean id="alien" class="com.rahul.Alien" scope="singleton" autowire="byType">
     <property name="val" value="20"> </property> 
-    <!-- <property name="comp" ref="comp"></property> -->
+    <property name="comp" ref="comp1"></property>
 
     <!--
     <constructor-arg type="com.rahul.Laptop" ref="laptop"></constructor-arg>
@@ -42,5 +42,6 @@
 <!-- when we have two objects of the same type, it will create confusion for spring when autowiring byType
 so we mark one of the bean as primary and the other will be backup -->
 <bean id="comp" class="com.rahul.Laptop" primary="true"></bean>
-<bean id="comp1" class="com.rahul.Desktop"></bean>
+<!-- lazy-init tells to create the bean only when called explicitly in code. It will be created if the property explicitly mentions its id -->
+<bean id="comp1" class="com.rahul.Desktop" lazy-init="true"></bean>
 </beans> 
